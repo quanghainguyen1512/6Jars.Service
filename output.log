@@ -1,0 +1,95 @@
+2018-12-25 14:09:46,277 - root - INFO - running environment: development
+2018-12-25 14:09:46,579 - root - INFO - running environment: development
+2018-12-25 14:12:07,844 - root - INFO - running environment: development
+2018-12-25 14:12:44,952 - root - INFO - running environment: development
+2018-12-25 14:13:36,278 - root - INFO - running environment: development
+2018-12-25 14:19:44,825 - root - INFO - running environment: development
+2018-12-26 02:56:57,962 - root - INFO - running environment: development
+2018-12-26 02:56:58,294 - root - INFO - running environment: development
+2018-12-26 02:58:49,575 - root - INFO - running environment: development
+2018-12-26 03:05:39,237 - root - INFO - running environment: development
+2018-12-26 04:49:48,962 - root - INFO - running environment: development
+2018-12-26 04:49:49,294 - root - INFO - running environment: development
+2018-12-26 04:58:41,362 - root - INFO - running environment: development
+2018-12-26 04:58:41,694 - root - INFO - running environment: development
+2018-12-26 12:08:57,171 - root - INFO - running environment: None
+2018-12-26 12:15:56,083 - root - INFO - running environment: None
+2018-12-26 13:45:46,574 - root - INFO - running environment: None
+2018-12-26 14:17:55,731 - root - INFO - running environment: None
+2018-12-26 14:34:18,618 - root - INFO - running environment: None
+2018-12-26 14:34:58,162 - root - INFO - running environment: None
+2018-12-26 14:37:52,473 - root - INFO - running environment: None
+2018-12-26 14:39:30,871 - root - INFO - running environment: None
+2018-12-26 14:39:31,327 - root - INFO - running environment: None
+2018-12-26 14:40:08,325 - root - INFO - running environment: None
+2018-12-26 14:41:08,873 - root - INFO - running environment: None
+2018-12-26 14:42:48,148 - root - INFO - running environment: None
+2018-12-26 14:43:51,536 - root - INFO - running environment: None
+2018-12-26 08:02:25,555 - root - INFO - running environment: development
+2018-12-26 08:02:25,556 - root - INFO - Listening to server - port: 4000
+2018-12-26 08:02:25,892 - root - INFO - running environment: development
+2018-12-26 08:02:25,893 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:22:17,289 - root - INFO - running environment: development
+2018-12-26 17:22:17,289 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:22:17,636 - root - INFO - running environment: development
+2018-12-26 17:22:17,636 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:27:09,708 - root - INFO - running environment: development
+2018-12-26 17:27:09,708 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:27:28,868 - root - INFO - running environment: development
+2018-12-26 17:27:28,869 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:27:53,709 - root - INFO - running environment: development
+2018-12-26 17:27:53,710 - root - INFO - Listening to server - port: 4000
+2018-12-26 17:27:54,055 - root - INFO - running environment: development
+2018-12-26 17:27:54,055 - root - INFO - Listening to server - port: 4000
+2018-12-27 09:09:23,609 - root - INFO - running environment: development
+2018-12-27 09:09:23,609 - root - INFO - Listening to server - port: 4000
+2018-12-27 09:09:24,257 - root - INFO - running environment: development
+2018-12-27 09:09:24,258 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:36:49,666 - root - INFO - running environment: development
+2018-12-28 09:36:49,666 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:36:50,020 - root - INFO - running environment: development
+2018-12-28 09:36:50,020 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:42:16,210 - root - INFO - running environment: development
+2018-12-28 09:42:16,210 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:42:48,693 - root - INFO - running environment: development
+2018-12-28 09:42:48,694 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:45:52,068 - root - INFO - running environment: development
+2018-12-28 09:45:52,069 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:47:55,585 - root - INFO - running environment: development
+2018-12-28 09:47:55,586 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:47:55,940 - root - INFO - running environment: development
+2018-12-28 09:47:55,940 - root - INFO - Listening to server - port: 4000
+2018-12-28 09:57:03,723 - root - INFO - running environment: development
+2018-12-28 09:57:03,724 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:01:35,753 - root - INFO - running environment: development
+2018-12-28 10:01:35,754 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:04:18,466 - root - INFO - running environment: development
+2018-12-28 10:04:18,466 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:07:20,410 - root - INFO - running environment: development
+2018-12-28 10:07:20,411 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:07:43,654 - root - INFO - running environment: development
+2018-12-28 10:07:43,655 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:08:14,447 - root - INFO - running environment: development
+2018-12-28 10:08:14,447 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:09:32,705 - root - INFO - running environment: development
+2018-12-28 10:09:32,705 - root - INFO - Listening to server - port: 4000
+2018-12-28 10:11:21,418 - root - INFO - running environment: development
+2018-12-28 10:11:21,418 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:24:30,609 - root - INFO - running environment: development
+2018-12-29 03:24:30,609 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:24:30,981 - root - INFO - running environment: development
+2018-12-29 03:24:30,981 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:31:08,494 - root - INFO - running environment: development
+2018-12-29 03:31:08,494 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:40:12,359 - root - INFO - running environment: development
+2018-12-29 03:40:12,359 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:40:12,718 - root - INFO - running environment: development
+2018-12-29 03:40:12,718 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:54:47,922 - root - INFO - running environment: development
+2018-12-29 03:54:47,923 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:55:11,001 - root - INFO - running environment: development
+2018-12-29 03:55:11,001 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:55:28,060 - root - INFO - running environment: development
+2018-12-29 03:55:28,061 - root - INFO - Listening to server - port: 4000
+2018-12-29 03:55:34,957 - root - INFO - running environment: development
+2018-12-29 03:55:34,957 - root - INFO - Listening to server - port: 4000
