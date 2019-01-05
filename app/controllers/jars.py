@@ -4,7 +4,7 @@ from flask_restful import Resource
 from ..helpers.constants import APP_URL
 from app import app, mongo
 
-class Wallets(Resource):
+class Jars(Resource):
     def get(self, short_name=None):
         if short_name:
             result = mongo.db.wallets.find_one_or_404({ 'short_name': short_name })

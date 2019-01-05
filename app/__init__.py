@@ -7,6 +7,7 @@ from flask_pymongo import PyMongo
 from flask_restful import Api, Resource
 from flask_jwt_extended import JWTManager
 from flask_bcrypt import Bcrypt
+from flask_socketio import SocketIO
 from app import models
 import config
 
@@ -20,7 +21,6 @@ class JSONEncoder(json.JSONEncoder):
             return str(o)
         return json.JSONEncoder.default(self, o)
 
-
 app = Flask(__name__, static_folder='../uploaded_files')
 app.config.from_object(config.Config)
 app.json_encoder = JSONEncoder
@@ -28,11 +28,14 @@ app.json_encoder = JSONEncoder
 flask_bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 mongo = PyMongo(app)
-
 @jwt.token_in_blacklist_loader
 def check_if_token_in_blacklist(decrypted_token):
     jti = decrypted_token['jti']
     return models.revoked_token_model.check_token_is_used(jti)
+
+@jwt.user_identity_loader
+def user_identity_lookup(user):
+    return user['email']
 
 from app.controllers import *
 api = Api(app)
@@ -44,5 +47,9 @@ api.add_resource(UserLogin, '/api/login', endpoint='login')
 api.add_resource(UserLogoutAccess, '/api/logout/access', endpoint='logoutaccess')
 api.add_resource(UserLogoutRefresh, '/api/logout/refresh', endpoint='logoutrefresh')
 api.add_resource(TokenRefresh, '/api/token/refresh', endpoint='tokenrefresh')
+
+api.add_resource(Transactions, '/api/transactions', endpoint='transactions')
+api.add_resource(Transactions, '/api/transactions/<string:tran_id>', endpoint='transaction')
+
+api.add_resource(Budgets, '/api/budget', endpoint='budget')
 # api.add_resource(Users, '/api/users')
-# api.add_resource(Categories, '/api/categories', endpoint='')

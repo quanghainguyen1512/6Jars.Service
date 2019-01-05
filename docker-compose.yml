@@ -11,17 +11,6 @@ services:
    - PORT=4000
    - DB=mongodb://hainq:Haideptrai1@ds143474.mlab.com:43474/6jars
    - SECRET='my-secret-string'
-#  mongodb:
-#   image: mongo:latest
-#   container_name: 'mongodb'
-#   environment: 
-#    - MONGO_DATA_DIR=/usr/data/db
-#    - MONGO_LOG_DIR=/dev/null
-#   volumes: 
-#    - ./data/db:/usr/data/db
-#   ports: 
-#    -27017:27017
-#   command: mongod --smallfiles --logpath=/dev/null
 networks:
  default:
   name: six_jars

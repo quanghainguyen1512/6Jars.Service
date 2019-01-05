@@ -38,5 +38,5 @@ def index():
 if __name__ == "__main__":
     LOG.info('running environment: {}'.format(os.environ.get('ENV')))
     LOG.info('Listening to server - port: {}'.format(os.environ.get('PORT')))
-    # app.config['DEBUG'] = os.environ.get('ENV') == 'development' # Debug mode if development env
+    app.config['DEBUG'] = os.environ.get('ENV') == 'development' # Debug mode if development env
     app.run(port=int(PORT), host='0.0.0.0') 

@@ -6,6 +6,7 @@ from flask_jwt_extended import jwt_required
 from ..helpers.constants import APP_URL
 from app import app, mongo
 import logger
+from app.models import category_model
 # ROOT_PATH = os.environ.get('ROOT_PATH')
 # LOG = logger.get_root_logger(
 #     __name__, filename=os.path.join(ROOT_PATH, 'output.log'))
@@ -15,13 +16,12 @@ class Categories(Resource):
     def get(self, name=None):
         data = []
         if name:
-            results = mongo.db.categories.find({'name': name})
-            for res in results:
-                res['url'] = APP_URL + url_for('categories') + '/' + res.get('name')
-                data.append(res)
-            return jsonify({'response': data}) 
+            cate = category_model.get_category_by_name(name)
+            if not cate: 
+                return jsonify({ 'ok': False, 'message': 'Category not found' })
+            return jsonify({ 'ok': True, 'response': cate }) 
         else:
-            results = mongo.db.categories.find({}, {'_id': 0})
+            results = category_model.get_all_categories()
             for res in results:
                 res['url'] = APP_URL + url_for('categories') + '/' + res.get('name')
                 data.append(res)
@@ -33,15 +33,13 @@ class Categories(Resource):
         if not data:
             return abort(400, message='Data should not be empty')
         else:
-            # name = data.get('name')
             name = data['name']
-            if name:
-                if mongo.db.categories.find_one({ 'name': name }):
-                    return abort(400, message='Name already exists, try another name')
-                else:
-                    mongo.db.categories.insert(data)
-            else:
+            if not name:
                 return abort(400)
+            if category_model.get_category_by_name(name):
+                return abort(400, message='Name already exists, try another name')
+            if not category_model.add_new_category(data):
+                return jsonify({ 'ok': False, 'message': 'Something went wrong' })
         return redirect(url_for('categories'))
     
     @jwt_required

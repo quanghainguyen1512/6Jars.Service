@@ -1,35 +1,36 @@
 import os
 from flask import request, redirect, url_for, jsonify
-from flask_restful import Resource, abort, reqparse
+from flask_restful import Resource, abort
 import flask_bcrypt
 from flask_jwt_extended import ( create_access_token, create_refresh_token, get_jwt_identity,
 jwt_refresh_token_required, jwt_required, get_raw_jwt)
-from app import mongo
-from ..schemas.user import validate_user
-from ..models import user_model, revoked_token_model
 
-parser = reqparse.RequestParser()
-parser.add_argument('email', help = 'This field cannot be blank', required = True)
-parser.add_argument('password', help = 'This field cannot be blank', required = True)
+from app import mongo
+from ..models import user_model, revoked_token_model, budget_model
+from app.schemas import user_schema, validate_data
 
 class UserRegistration(Resource):
     def post(self):
-        # data = parser.parse_args()
-        res = validate_user(request.json)
+        res = validate_data(request.json, user_schema)
         if not res['ok']:
-            return jsonify({ 'ok': False, 'message': res['message'] })
+            return abort(400, message=res['message'])
         data = res['data']
         if user_model.find_user_by_email(data['email']):
             return jsonify({ 'ok': False, 'message': 'Email already exists' })
         data['password'] = flask_bcrypt.generate_password_hash(data['password'])
         if not user_model.add_new_user(data):
             return abort(500, message='Something went wrong')
+        if not budget_model.init_budget(data['email']):
+            return abort(500, message='Cannot initialize budget')
         return jsonify({ 'ok': True, 'message': 'Successful registration'})
 
 
 class UserLogin(Resource):
     def post(self):
-        data = parser.parse_args()
+        res = validate_data(request.json, user_schema)
+        if not res['ok']:
+            return abort(400, message=res['message'])
+        data = res['data']
         current_user = user_model.find_user_by_email(data['email'])
         if not current_user:
             return jsonify({ 'ok': False, 'message': 'User {} doesn\'t exist'.format(data['email']) })
@@ -44,7 +45,7 @@ class UserLogin(Resource):
             return jsonify({
                     'ok': True,
                     'message': 'Logged in as {}'.format(current_user['email']),
-                    'data': current_user
+                    'response': current_user
                 })
         return jsonify({ 'ok': False, 'message': 'Wrong credentials'})
       
@@ -88,9 +89,7 @@ class TokenRefresh(Resource):
         access_token = create_access_token(identity = current_user)
         return {'access_token': access_token}
 
-class SecretResource(Resource):
+class TestSomeShit(Resource):
     @jwt_required
     def get(self):
-        return {
-            'answer': 42
-        }
+        return jsonify({ 'response': get_jwt_identity()})
